@@ -1,4 +1,8 @@
-speed_factor = 80
+def houkacka():
+    while True:
+        music.play_tone(Note.C, 500)
+        music.play_tone(Note.D, 500)
+speed_factor = 500
 pin_C = DigitalPin.P12
 pin_L = DigitalPin.P13
 pin_R = DigitalPin.P14
@@ -14,9 +18,13 @@ pins.set_pull(pin_R, PinPullMode.PULL_NONE)
 #basic.show_string("S")
 
 # temporary code
-motor_run(100, 100, speed_factor); basic.pause(2000)
+motor_run(100, -100, speed_factor); basic.pause(5000); 
+music.set_volume(500)
+
 motor_run(); basic.pause(300)
-motor_run(-100, -100, 60); basic.pause(2000)
+motor_run(100, 0, speed_factor); basic.pause(100)
+motor_run(); basic.pause(300)
+motor_run(100, -100, speed_factor); basic.pause(5000)
 motor_run()
 # end of temporary code
 
